@@ -220,20 +220,32 @@
     }
 
     .chart-panel {
-        top: 215px;
-        left: 437px;
-        width: 726px;
-        height: 298px;
-        background: #F4F0FE 0% 0% no-repeat padding-box;
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        background: #F4F0FE;
         border-radius: 12px;
-        opacity: 1;
+        padding: 27px;
+        width: 100%;
+    }
+
+    .chart-panel > div:first-child {
+        flex: 1;
+        min-width: 0;
+        position: relative;
+        height: 250px;
+    }
+
+    .chart-panel > div:last-child {
+        width: 160px;
+        flex-shrink: 0;
     }
 
     .chart-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 10px;
+      /* margin-bottom: 10px; */
       font-weight: 800;
     }
 
@@ -519,7 +531,14 @@
         max-height: 420px;
       }
 
-      .chart-panel,
+      .chart-panel {
+        flex-direction: column;
+      }
+
+      .chart-panel > div:last-child {
+        width: 100%;
+      }
+
       .vitals-grid,
       .right-stack {
         grid-template-columns: 1fr;
