@@ -94,7 +94,7 @@ function setTextContent(id, value) {
   }
 }
 
-function setImageSource(id, src, alt) {
+function setProfile(id, src, alt) {
   const element = document.getElementById(id);
   if (element) {
     element.src = src;
@@ -109,7 +109,7 @@ function selectPatient(patient) {
   const latest = history[history.length - 1] || {};
   const bp = latest.blood_pressure || {};
 
-  setImageSource(
+  setProfile(
     "profilePhoto",
     patient.profile_picture,
     patient.name || "Selected patient",
@@ -267,9 +267,9 @@ function showDiagnosticList(items) {
         .map(
           (item) => `
         <tr>
-          <td>${item.name || "--"}</td>
-          <td>${item.description || "--"}</td>
-          <td>${item.status || "--"}</td>
+          <td>${item.name}</td>
+          <td>${item.description}</td>
+          <td>${item.status}</td>
         </tr>
       `,
         )
@@ -285,7 +285,7 @@ function showLabResults(items) {
           (item) => `
         <div class="lab-item">
           <span>${item}</span>
-          <a class="download" href="#" aria-label="Download ${item}"><img src="assets/healthcare_images/download_FILL0_wght300_GRAD0_opsz24 (1).svg" alt="Download" /> </a>
+          <a class="download" href="#" aria-label="Download ${item}"><img src="assets/healthcare_images/downloadIcon.svg" alt="Download" /> </a>
         </div>
       `,
         )
