@@ -2,181 +2,11 @@ const API_URL = "https://fedskillstest.coalitiontechnologies.workers.dev";
 const API_USERNAME = "coalition";
 const API_PASSWORD = "skills-test";
 
-// const fallbackPatients = [
-//   {
-//     name: "Emily Williams",
-//     gender: "Female",
-//     age: 18,
-//     profile_picture: "https://randomuser.me/api/portraits/women/10.jpg"
-//   },
-//   {
-//     name: "Ryan Johnson",
-//     gender: "Male",
-//     age: 45,
-//     profile_picture: "https://randomuser.me/api/portraits/men/12.jpg"
-//   },
-//   {
-//     name: "Brandon Mitchell",
-//     gender: "Male",
-//     age: 36,
-//     profile_picture: "https://randomuser.me/api/portraits/men/20.jpg"
-//   },
-//   {
-//     name: "Jessica Taylor",
-//     gender: "Female",
-//     age: 28,
-//     profile_picture: "https://randomuser.me/api/portraits/women/68.jpg",
-//     date_of_birth: "August 23, 1996",
-//     phone_number: "(415) 555-1234",
-//     emergency_contact: "(415) 555-5678",
-//     insurance_type: "Sunrise Health Assurance",
-//     diagnosis_history: [
-//       {
-//         month: "October",
-//         year: 2023,
-//         blood_pressure: {
-//           systolic: { value: 120, levels: "Higher than Average" },
-//           diastolic: { value: 110, levels: "Lower than Average" }
-//         },
-//         heart_rate: { value: 78, levels: "Lower than Average" },
-//         respiratory_rate: { value: 20, levels: "Normal" },
-//         temperature: { value: 98.6, levels: "Normal" }
-//       },
-//       {
-//         month: "November",
-//         year: 2023,
-//         blood_pressure: {
-//           systolic: { value: 115, levels: "Higher than Average" },
-//           diastolic: { value: 65, levels: "Lower than Average" }
-//         },
-//         heart_rate: { value: 78, levels: "Lower than Average" },
-//         respiratory_rate: { value: 20, levels: "Normal" },
-//         temperature: { value: 98.6, levels: "Normal" }
-//       },
-//       {
-//         month: "December",
-//         year: 2023,
-//         blood_pressure: {
-//           systolic: { value: 160, levels: "Higher than Average" },
-//           diastolic: { value: 110, levels: "Lower than Average" }
-//         },
-//         heart_rate: { value: 78, levels: "Lower than Average" },
-//         respiratory_rate: { value: 20, levels: "Normal" },
-//         temperature: { value: 98.6, levels: "Normal" }
-//       },
-//       {
-//         month: "January",
-//         year: 2024,
-//         blood_pressure: {
-//           systolic: { value: 118, levels: "Higher than Average" },
-//           diastolic: { value: 92, levels: "Lower than Average" }
-//         },
-//         heart_rate: { value: 78, levels: "Lower than Average" },
-//         respiratory_rate: { value: 20, levels: "Normal" },
-//         temperature: { value: 98.6, levels: "Normal" }
-//       },
-//       {
-//         month: "February",
-//         year: 2024,
-//         blood_pressure: {
-//           systolic: { value: 150, levels: "Higher than Average" },
-//           diastolic: { value: 70, levels: "Lower than Average" }
-//         },
-//         heart_rate: { value: 78, levels: "Lower than Average" },
-//         respiratory_rate: { value: 20, levels: "Normal" },
-//         temperature: { value: 98.6, levels: "Normal" }
-//       },
-//       {
-//         month: "March",
-//         year: 2024,
-//         blood_pressure: {
-//           systolic: { value: 160, levels: "Higher than Average" },
-//           diastolic: { value: 78, levels: "Lower than Average" }
-//         },
-//         heart_rate: { value: 78, levels: "Lower than Average" },
-//         respiratory_rate: { value: 20, levels: "Normal" },
-//         temperature: { value: 98.6, levels: "Normal" }
-//       }
-//     ],
-//     diagnostic_list: [
-//       {
-//         name: "Hypertension",
-//         description: "Chronic high blood pressure",
-//         status: "Under Observation"
-//       },
-//       {
-//         name: "Type 2 Diabetes",
-//         description: "Insulin resistance and elevated blood sugar",
-//         status: "Cured"
-//       },
-//       {
-//         name: "Asthma",
-//         description: "Recurrent episodes of bronchial constriction",
-//         status: "Inactive"
-//       },
-//       {
-//         name: "Osteoarthritis",
-//         description: "Degenerative joint disease",
-//         status: "Untreated"
-//       }
-//     ],
-//     lab_results: ["Blood Tests", "CT Scans", "Radiology Reports", "X-Rays", "Urine Test"]
-//   },
-//   {
-//     name: "Samantha Johnson",
-//     gender: "Female",
-//     age: 56,
-//     profile_picture: "https://randomuser.me/api/portraits/women/22.jpg"
-//   },
-//   {
-//     name: "Ashley Martinez",
-//     gender: "Female",
-//     age: 54,
-//     profile_picture: "https://randomuser.me/api/portraits/women/33.jpg"
-//   },
-//   {
-//     name: "Olivia Brown",
-//     gender: "Female",
-//     age: 32,
-//     profile_picture: "https://randomuser.me/api/portraits/women/45.jpg"
-//   },
-//   {
-//     name: "Tyler Davis",
-//     gender: "Male",
-//     age: 19,
-//     profile_picture: "https://randomuser.me/api/portraits/men/33.jpg"
-//   },
-//   {
-//     name: "Kevin Anderson",
-//     gender: "Male",
-//     age: 30,
-//     profile_picture: "https://randomuser.me/api/portraits/men/40.jpg"
-//   },
-//   {
-//     name: "Dylan Thompson",
-//     gender: "Male",
-//     age: 36,
-//     profile_picture: "https://randomuser.me/api/portraits/men/50.jpg"
-//   },
-//   {
-//     name: "Nathan Evans",
-//     gender: "Male",
-//     age: 58,
-//     profile_picture: "https://randomuser.me/api/portraits/men/60.jpg"
-//   },
-//   {
-//     name: "Mike Nolan",
-//     gender: "Male",
-//     age: 31,
-//     profile_picture: "https://randomuser.me/api/portraits/men/70.jpg"
-//   }
-// ];
-
 let chart;
 let patients = [];
 let selectedPatient = null;
 
-const monthShort = {
+const monthCal = {
   January: "Jan",
   February: "Feb",
   March: "Mar",
@@ -221,16 +51,16 @@ async function fetchPatients() {
       patients[0] ||
       null;
     status.remove();
-    renderPatients(selectedPatient);
+    showPatients(selectedPatient);
     selectPatient(selectedPatient);
   } catch (error) {
     status.className = "error";
-    status.textContent = "Unable to load API data.";
+    status.textContent = "Unable to load patient API data.";
     console.error(error);
   }
 }
 
-function renderPatients(activePatient = selectedPatient) {
+function showPatients(activePatient = selectedPatient) {
   const list = document.getElementById("patientList");
   list.innerHTML = patients
     .map(
@@ -251,7 +81,7 @@ function renderPatients(activePatient = selectedPatient) {
     row.addEventListener("click", () => {
       const patient = patients.find((item) => item.name === row.dataset.name);
       selectedPatient = patient || selectedPatient;
-      renderPatients(selectedPatient);
+      showPatients(selectedPatient);
       selectPatient(patient);
     });
   });
@@ -323,14 +153,14 @@ function selectPatient(patient) {
     latest.heart_rate?.levels ? `▼ ${latest.heart_rate.levels}` : "--",
   );
 
-  renderChart(history);
-  renderDiagnosticList(patient.diagnostic_list);
-  renderLabResults(patient.lab_results);
+  showChart(history);
+  showDiagnosticList(patient.diagnostic_list);
+  showLabResults(patient.lab_results);
 }
 
-function renderChart(history) {
+function showChart(history) {
   const labels = history.map(
-    (item) => `${monthShort[item.month] || item.month}, ${item.year}`,
+    (item) => `${monthCal[item.month] || item.month}, ${item.year}`,
   );
   const systolic = history.map(
     (item) => item.blood_pressure?.systolic?.value || 0,
@@ -338,9 +168,9 @@ function renderChart(history) {
   const diastolic = history.map(
     (item) => item.blood_pressure?.diastolic?.value || 0,
   );
-  const ctx = document.getElementById("bloodPressureChart");
+  const chartImg = document.getElementById("bloodPressureChart");
 
-  if (!ctx) {
+  if (!chartImg) {
     return;
   }
 
@@ -348,7 +178,7 @@ function renderChart(history) {
     chart.destroy();
   }
 
-  chart = new Chart(ctx, {
+  chart = new Chart(chartImg, {
     type: "line",
     data: {
       labels,
@@ -430,7 +260,7 @@ function renderChart(history) {
   });
 }
 
-function renderDiagnosticList(items) {
+function showDiagnosticList(items) {
   const rows = document.getElementById("diagnosticRows");
   rows.innerHTML = items.length
     ? items
@@ -447,7 +277,7 @@ function renderDiagnosticList(items) {
     : `<tr><td colspan="3">No diagnostic records available.</td></tr>`;
 }
 
-function renderLabResults(items) {
+function showLabResults(items) {
   const list = document.getElementById("labResults");
   list.innerHTML = items.length
     ? items

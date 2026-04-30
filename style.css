@@ -33,7 +33,7 @@
       padding: 24px;
     }
 
-    .topbar {
+    .header-bar {
       height: 72px;
       background: var(--card);
       border-radius: 999px;
@@ -45,7 +45,7 @@
       gap: 20px;
     }
 
-    .brand {
+    .logo {
       display: flex;
       align-items: center;
       gap: 10px;
@@ -54,24 +54,6 @@
       white-space: nowrap;
     }
 
-    .brand-mark {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3px;
-      transform: rotate(45deg);
-    }
-
-    .brand-mark span {
-      border-radius: 3px;
-      background: #01f0d0;
-    }
-
-    .brand-mark span:nth-child(2),
-    .brand-mark span:nth-child(3) {
-      background: #0b84a5;
-    }
 
     .nav {
       display: flex;
@@ -121,7 +103,7 @@
       font-size: 12px;
     }
 
-    .layout {
+    .main-section {
       display: grid;
       grid-template-columns: 360px minmax(500px, 1fr) 360px;
       gap: 28px;
@@ -129,7 +111,7 @@
       align-items: start;
     }
 
-    .card {
+    .main-card {
       background: var(--card);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -491,7 +473,7 @@
     }
 
     @media (max-width: 1180px) {
-      .layout {
+      .main-section {
         grid-template-columns: 300px 1fr;
       }
 
@@ -506,7 +488,7 @@
         padding: 14px;
       }
 
-      .topbar {
+      .header-bar {
         height: auto;
         border-radius: 24px;
         padding: 16px;
@@ -518,7 +500,7 @@
         justify-content: flex-start;
       }
 
-      .layout {
+      .main-section {
         grid-template-columns: 1fr;
       }
 

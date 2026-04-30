@@ -25,12 +25,12 @@
   </head>
   <body>
     <div class="page">
-      <header class="topbar">
-        <div class="brand" aria-label="Tech.Care">
+      <header class="header-bar">
+        <div class="logo" label="Tech.Care">
          <img src="assets/healthcare_images/TestLogo.svg" alt="Tech.Care Logo" class="logo" />
         </div>
 
-        <nav class="nav" aria-label="Primary navigation">
+        <nav class="nav" label="Primary navigation">
           <a href="#"><img src="assets/healthcare_images/overview.svg" alt="Overview" />Overview</a>
           <a href="#" class="active"><img src="assets/healthcare_images/patients.svg" alt="Patients" />Patients</a>
           <a href="#"><img src="assets/healthcare_images/schedule.svg" alt="Schedule" />Schedule</a>
@@ -47,18 +47,18 @@
             <strong>Dr. Jose Simmons</strong>
             <small>General Practitioner</small>
           </div>
-          <span aria-hidden="true"><img src="assets/healthcare_images/settings.png" alt="settings_icon" /> </span>
-          <!-- <span aria-hidden="true"></span><img src="assets/healthcare_images/more_vert_FILL0_wght300_GRAD0_opsz24.png" alt="vert_icon" /></span> -->
+          <span hidden="true"><img src="assets/healthcare_images/settings.png" alt="settings_icon" /> </span>
+          <!-- <span hidden="true"></span><img src="assets/healthcare_images/more_vert_FILL0_wght300_GRAD0_opsz24.png" alt="vert_icon" /></span> -->
         </div>
       </header>
 
-      <main class="layout">
-        <aside class="card patients-card" aria-labelledby="patientsTitle">
+      <main class="main-section">
+        <aside class="main-card patients-card" title-header="patientsTitle">
           <div class="patients-header">
             <h1 class="section-title" id="patientsTitle">
               Patients
             </h1>
-             <span class="search-icon" aria-hidden="true"><img src="assets/healthcare_images/search.svg" alt="Search" /></span>
+             <span class="search-icon" hidden="true"><img src="assets/healthcare_images/search.svg" alt="Search" /></span>
           </div>
           <div id="patientStatus" class="loading">Loading patients...</div>
           <div class="patient-list" id="patientList"></div>
@@ -66,8 +66,8 @@
 
         <section class="main-stack">
           <article
-            class="card diagnosis-history"
-            aria-labelledby="diagnosisHistoryTitle"
+            class="main-card diagnosis-history"
+            title-header="diagnosisHistoryTitle"
           >
             <h2 class="section-title" id="diagnosisHistoryTitle">
               Diagnosis History
@@ -76,7 +76,7 @@
               <div>
                 <div class="chart-head">
                   <span>Blood Pressure</span>
-                  <select aria-label="Chart duration">
+                  <select label="Chart duration">
                     <option>Last 6 months</option>
                     <option>Last 12 months</option>
                   </select>
@@ -84,7 +84,7 @@
                 <canvas
                   id="bloodPressureChart"
                   height="150"
-                  aria-label="Blood pressure chart"
+                  label="Blood pressure chart"
                 ></canvas>
               </div>
               <div>
@@ -146,8 +146,8 @@
           </article>
 
           <article
-            class="card table-card"
-            aria-labelledby="diagnosticListTitle"
+            class="main-card table-card"
+            title-header="diagnosticListTitle"
           >
             <h2 class="section-title" id="diagnosticListTitle">
               Diagnostic List
@@ -168,7 +168,7 @@
         </section>
 
         <aside class="right-stack">
-          <article class="card profile-card" aria-labelledby="patientName">
+          <article class="main-card profile-card" title-header="patientName">
             <img
               class="profile-photo"
               id="profilePhoto"
@@ -212,7 +212,7 @@
             <button class="btn">Show All Information</button>
           </article>
 
-          <article class="card lab-card" aria-labelledby="labResultsTitle">
+          <article class="main-card lab-card" title-header="labResultsTitle">
             <h2 class="section-title" id="labResultsTitle">Lab Results</h2>
             <div class="lab-list" id="labResults"></div>
           </article>
