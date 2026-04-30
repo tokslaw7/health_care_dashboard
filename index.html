@@ -1,165 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tech.Care Patient Dashboard</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  
-</head>
-<body>
-  <div class="page">
-    <header class="topbar">
-      <div class="brand" aria-label="Tech.Care">
-        <div class="brand-mark" aria-hidden="true">
-          <span></span><span></span><span></span><span></span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Tokslaw, Toks Lawal, Tokunbo Lawal" />
+    <meta
+      name="description"
+      content=" Tech.Care Patient Dashboard - A comprehensive healthcare dashboard designed for medical professionals to monitor patient health metrics, view diagnosis history, and manage patient information efficiently. Featuring an intuitive interface with real-time data visualization, this dashboard empowers doctors to make informed decisions and provide better care."
+    />
+    <meta
+      property="og:title"
+      content="Healthcare Dashboard - Tech.Care Patient Dashboard"
+    />
+    <meta property="og:type" content="website" />
+    <title>Tech.Care Patient Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="brand" aria-label="Tech.Care">
+         <img src="assets/healthcare_images/TestLogo.svg" alt="Tech.Care Logo" class="logo" />
         </div>
-        Tech.Care
-      </div>
 
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#">⌂ Overview</a>
-        <a href="#" class="active">☻ Patients</a>
-        <a href="#">▣ Schedule</a>
-        <a href="#">□ Message</a>
-        <a href="#">▰ Transactions</a>
-      </nav>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#"><img src="assets/healthcare_images/overview.svg" alt="Overview" />Overview</a>
+          <a href="#" class="active"><img src="assets/healthcare_images/patients.svg" alt="Patients" />Patients</a>
+          <a href="#"><img src="assets/healthcare_images/schedule.svg" alt="Schedule" />Schedule</a>
+          <a href="#"><img src="assets/healthcare_images/message.svg" alt="Message" />Message</a>
+          <a href="#"><img src="assets/healthcare_images/transactions.svg" alt="Transactions" />Transactions</a>
+        </nav>
 
-      <div class="doctor-profile">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Jose Simmons" />
-        <div>
-          <strong>Dr. Jose Simmons</strong>
-          <small>General Practitioner</small>
+        <div class="doctor-profile">
+          <img
+            src="https://randomuser.me/api/portraits/women/44.jpg"
+            alt="Dr. Jose Simmons"
+          />
+          <div>
+            <strong>Dr. Jose Simmons</strong>
+            <small>General Practitioner</small>
+          </div>
+          <span aria-hidden="true"><img src="assets/healthcare_images/settings.png" alt="settings_icon" /> </span>
+          <!-- <span aria-hidden="true"></span><img src="assets/healthcare_images/more_vert_FILL0_wght300_GRAD0_opsz24.png" alt="vert_icon" /></span> -->
         </div>
-        <span aria-hidden="true">⚙ ⋮</span>
-      </div>
-    </header>
+      </header>
 
-    <main class="layout">
-      <aside class="card patients-card" aria-labelledby="patientsTitle">
-        <div class="patients-header">
-          <h1 class="section-title" id="patientsTitle">Patients</h1>
-          <span class="search-icon" aria-hidden="true">⌕</span>
-        </div>
-        <div id="patientStatus" class="loading">Loading patients...</div>
-        <div class="patient-list" id="patientList"></div>
-      </aside>
-
-      <section class="main-stack">
-        <article class="card diagnosis-history" aria-labelledby="diagnosisHistoryTitle">
-          <h2 class="section-title" id="diagnosisHistoryTitle">Diagnosis History</h2>
-          <div class="chart-panel">
-            <div>
-              <div class="chart-head">
-                <span>Blood Pressure</span>
-                <select aria-label="Chart duration">
-                  <option>Last 6 months</option>
-                  <option>Last 12 months</option>
-                </select>
-              </div>
-                <canvas id="bloodPressureChart" height="150" aria-label="Blood pressure chart"></canvas>
-            </div>
-            <div>
-              <div class="bp-stat">
-                <div class="bp-label"><span class="dot pink"></span>Systolic</div>
-                <div class="bp-value" id="systolicValue">--</div>
-                <div class="trend" id="systolicTrend">--</div>
-              </div>
-              <div class="bp-stat">
-                <div class="bp-label"><span class="dot purple"></span>Diastolic</div>
-                <div class="bp-value" id="diastolicValue">--</div>
-                <div class="trend" id="diastolicTrend">--</div>
-              </div>
-            </div>
+      <main class="layout">
+        <aside class="card patients-card" aria-labelledby="patientsTitle">
+          <div class="patients-header">
+            <h1 class="section-title" id="patientsTitle">
+              Patients
+            </h1>
+             <span class="search-icon" aria-hidden="true"><img src="assets/healthcare_images/search.svg" alt="Search" /></span>
           </div>
+          <div id="patientStatus" class="loading">Loading patients...</div>
+          <div class="patient-list" id="patientList"></div>
+        </aside>
 
-          <div class="vitals-grid">
-            <div class="vital-card blue">
-               <img src="assets/healthcare_images/respiratory rate.svg" alt="respiratory rate icon" class="vital-icon" />
+        <section class="main-stack">
+          <article
+            class="card diagnosis-history"
+            aria-labelledby="diagnosisHistoryTitle"
+          >
+            <h2 class="section-title" id="diagnosisHistoryTitle">
+              Diagnosis History
+            </h2>
+            <div class="chart-panel">
               <div>
-                <p class="vital-title">Respiratory Rate</p>
-                <p class="vital-value" id="respiratoryRate">--</p>
-                <p class="vital-status" id="respiratoryStatus">--</p>
+                <div class="chart-head">
+                  <span>Blood Pressure</span>
+                  <select aria-label="Chart duration">
+                    <option>Last 6 months</option>
+                    <option>Last 12 months</option>
+                  </select>
+                </div>
+                <canvas
+                  id="bloodPressureChart"
+                  height="150"
+                  aria-label="Blood pressure chart"
+                ></canvas>
               </div>
-            </div>
-            <div class="vital-card pink">
-               <img src="assets/healthcare_images/temperature.svg" alt="temperatureicon" class="vital-icon" />
               <div>
-                <p class="vital-title">Temperature</p>
-                <p class="vital-value" id="temperature">--</p>
-                <p class="vital-status" id="temperatureStatus">--</p>
+                <div class="bp-stat">
+                  <div class="bp-label">
+                    <span class="dot pink"></span>Systolic
+                  </div>
+                  <div class="bp-value" id="systolicValue">--</div>
+                  <div class="trend" id="systolicTrend">--</div>
+                </div>
+                <div class="bp-stat">
+                  <div class="bp-label">
+                    <span class="dot purple"></span>Diastolic
+                  </div>
+                  <div class="bp-value" id="diastolicValue">--</div>
+                  <div class="trend" id="diastolicTrend">--</div>
+                </div>
               </div>
             </div>
-            <div class="vital-card pinky">
-              <img src="assets/healthcare_images/HeartBPM.svg" alt="Heart icon" class="vital-icon" />
-              <div>
-                <p class="vital-title">Heart Rate</p>
-                <p class="vital-value" id="heartRate">--</p>
-                <p class="vital-status" id="heartStatus">--</p>
+
+            <div class="vitals-grid">
+              <div class="vital-card blue">
+                <img
+                  src="assets/healthcare_images/respiratory rate.svg"
+                  alt="respiratory rate icon"
+                  class="vital-icon"
+                />
+                <div>
+                  <p class="vital-title">Respiratory Rate</p>
+                  <p class="vital-value" id="respiratoryRate">--</p>
+                  <p class="vital-status" id="respiratoryStatus">--</p>
+                </div>
+              </div>
+              <div class="vital-card pink">
+                <img
+                  src="assets/healthcare_images/temperature.svg"
+                  alt="temperatureicon"
+                  class="vital-icon"
+                />
+                <div>
+                  <p class="vital-title">Temperature</p>
+                  <p class="vital-value" id="temperature">--</p>
+                  <p class="vital-status" id="temperatureStatus">--</p>
+                </div>
+              </div>
+              <div class="vital-card pinky">
+                <img
+                  src="assets/healthcare_images/HeartBPM.svg"
+                  alt="Heart icon"
+                  class="vital-icon"
+                />
+                <div>
+                  <p class="vital-title">Heart Rate</p>
+                  <p class="vital-value" id="heartRate">--</p>
+                  <p class="vital-status" id="heartStatus">--</p>
+                </div>
               </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <article class="card table-card" aria-labelledby="diagnosticListTitle">
-          <h2 class="section-title" id="diagnosticListTitle">Diagnostic List</h2>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Problem/Diagnosis</th>
-                  <th>Description</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody id="diagnosticRows"></tbody>
-            </table>
-          </div>
-        </article>
-      </section>
+          <article
+            class="card table-card"
+            aria-labelledby="diagnosticListTitle"
+          >
+            <h2 class="section-title" id="diagnosticListTitle">
+              Diagnostic List
+            </h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Problem/Diagnosis</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="diagnosticRows"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
 
-      <aside class="right-stack">
-        <article class="card profile-card" aria-labelledby="patientName">
-          <img class="profile-photo" id="profilePhoto" src="" alt="Selected patient" />
-          <h2 id="patientName">--</h2>
-          <div class="profile-info">
-            <div class="info-row">
-              <span class="info-icon">📅</span>
-              <div><small>Date Of Birth</small><strong id="dateOfBirth">--</strong></div>
+        <aside class="right-stack">
+          <article class="card profile-card" aria-labelledby="patientName">
+            <img
+              class="profile-photo"
+              id="profilePhoto"
+              src=""
+              alt="Selected patient"
+            />
+            <h2 id="patientName">--</h2>
+            <div class="profile-info">
+              <div class="info-row">
+                <span class="info-icon"><img src="assets/healthcare_images/BirthIcon.svg" alt="Date of Birth" /></span>
+                <div>
+                  <small>Date Of Birth</small
+                  ><strong id="dateOfBirth">--</strong>
+                </div>
+              </div>
+              <div class="info-row">
+                <span class="info-icon"><img src="assets/healthcare_images/FemaleIcon.svg" alt="Gender" /></span>
+                <div><small>Gender</small><strong id="gender">--</strong></div>
+              </div>
+              <div class="info-row">
+                <span class="info-icon"><img src="assets/healthcare_images/PhoneIcon.svg" alt="Phone" /></span>
+                <div>
+                  <small>Contact Info.</small><strong id="phone">--</strong>
+                </div>
+              </div>
+              <div class="info-row">
+                <span class="info-icon"><img src="assets/healthcare_images/PhoneIcon.svg" alt="Emergency" /></span>
+                <div>
+                  <small>Emergency Contacts</small
+                  ><strong id="emergency">--</strong>
+                </div>
+              </div>
+              <div class="info-row">
+                <span class="info-icon"><img src="assets/healthcare_images/InsuranceIcon.svg" alt="Insurance" /></span>
+                <div>
+                  <small>Insurance Provider</small
+                  ><strong id="insurance">--</strong>
+                </div>
+              </div>
             </div>
-            <div class="info-row">
-              <span class="info-icon">⚧</span>
-              <div><small>Gender</small><strong id="gender">--</strong></div>
-            </div>
-            <div class="info-row">
-              <span class="info-icon">☎</span>
-              <div><small>Contact Info.</small><strong id="phone">--</strong></div>
-            </div>
-            <div class="info-row">
-              <span class="info-icon">☎</span>
-              <div><small>Emergency Contacts</small><strong id="emergency">--</strong></div>
-            </div>
-            <div class="info-row">
-              <span class="info-icon">🛡</span>
-              <div><small>Insurance Provider</small><strong id="insurance">--</strong></div>
-            </div>
-          </div>
-          <button class="btn">Show All Information</button>
-        </article>
+            <button class="btn">Show All Information</button>
+          </article>
 
-        <article class="card lab-card" aria-labelledby="labResultsTitle">
-          <h2 class="section-title" id="labResultsTitle">Lab Results</h2>
-          <div class="lab-list" id="labResults"></div>
-        </article>
-      </aside>
-    </main>
-  </div>
+          <article class="card lab-card" aria-labelledby="labResultsTitle">
+            <h2 class="section-title" id="labResultsTitle">Lab Results</h2>
+            <div class="lab-list" id="labResults"></div>
+          </article>
+        </aside>
+      </main>
+    </div>
 
- <script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
